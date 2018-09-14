@@ -1,6 +1,7 @@
 package com.comeon.entities;
 
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.UUID;
 
 public class ActivityComment {
@@ -13,22 +14,23 @@ public class ActivityComment {
 
     public ActivityComment() {
         this.commentId = UUID.randomUUID().toString();
+        this.data = new GregorianCalendar();
     }
 
-    public ActivityComment(String senderId, String message, Calendar data, String actionId) {
+    public ActivityComment(String senderId, String message, String actionId) {
         this.commentId = UUID.randomUUID().toString();
         this.senderId = senderId;
         this.message = message;
-        this.data = data;
         this.actionId = actionId;
+        this.data = new GregorianCalendar();
     }
 
-    public ActivityComment(String commentId, String senderId, String message, Calendar data, String actionId) {
+    public ActivityComment(String commentId, String senderId, String message, String actionId) {
         this.commentId = commentId;
         this.senderId = senderId;
         this.message = message;
-        this.data = data;
         this.actionId = actionId;
+        this.data = new GregorianCalendar();
     }
 
     public String getCommentId() {
